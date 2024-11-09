@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def term(n,t,T):
+  trm=1/n*np.cos(2*np.pi*n*t/T)
+  return trm
+T=20
+t=np.arange(0,100,0.01)
+nterm=4
+sum=0
+for i in np.arange(1,nterm+1):
+  termval=4/np.pi*((-1)**(i-1))*term(2*i-1,t,T)
+  sum=sum+termval
+  plt.plot(t,termval)
+plt.plot(t,sum)
+plt.show()
+
+
+
